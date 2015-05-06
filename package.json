@@ -1,0 +1,31 @@
+{
+  "name": "ko-random-user",
+  "private": true,
+  "scripts": {
+    "postinstall": "jspm install",
+    "start": "live-server --open=src/index.html"
+  },
+  "jspm": {
+    "directories": {},
+    "dependencies": {
+      "bootstrap": "github:twbs/bootstrap@^3.3.4",
+      "crossroads": "github:millermedeiros/crossroads.js@^0.12.0",
+      "hasher": "github:millermedeiros/hasher@^1.2.0",
+      "jquery": "github:components/jquery@^2.1.3",
+      "knockout": "github:knockout/knockout@^3.3.0",
+      "knockout-punches": "github:mbest/knockout.punches@^0.5.1",
+      "signals": "github:millermedeiros/js-signals@^1.0.0",
+      "text": "github:systemjs/plugin-text@^0.0.2",
+      "title-case": "npm:title-case@^1.1.0"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
+  },
+  "devDependencies": {
+    "jspm": "^0.15.5",
+    "live-server": "^0.7.1"
+  }
+}

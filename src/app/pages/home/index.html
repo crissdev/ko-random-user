@@ -1,0 +1,63 @@
+<!--ko if: $component.busy() && !$component.user()-->
+<i class="fa fa-3x fa-spinner fa-spin"></i>
+<!--/ko-->
+
+<!--ko if: $component.user()-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="cko-user-card">
+        <!--ko if: $component.user()-->
+        <div class="media" data-bind="with: $component.user">
+          <div class="media-body">
+            <h2 class="hidden-xs media-heading">
+              {{$data.name.title | titleCase}}
+              {{$data.name.first | titleCase}}
+              {{$data.name.last | titleCase}}
+              <i class="fa fa-spinner fa-spin text-info" visible="{{$component.busy}}"></i>
+            </h2>
+            <h3 class="visible-xs media-heading">
+              {{$data.name.title | titleCase}}
+              {{$data.name.first | titleCase}}
+              {{$data.name.last | titleCase}}
+              <i class="fa fa-spinner fa-spin text-info" visible="{{$component.busy}}"></i>
+            </h3>
+            <p class="text-muted">
+              {{$data.username}}
+            </p>
+            <p style="margin-top: 40px">
+              <i class="fa fa-2x fa-envelope text-muted hidden-xs"></i>
+              <i class="fa fa-envelope text-muted visible-xs"></i>
+              {{$data.email}}
+            </p>
+            <p>
+              <i class="fa fa-2x fa-phone text-muted"></i>
+              {{$data.phone}}
+            </p>
+            <p>
+              <i class="fa fa-2x fa-mobile text-muted"></i>
+              {{$data.cell}}
+            </p>
+            <p data-bind="with: $data.location">
+              <i class="fa fa-2x fa-home text-muted"></i>
+              {{$data.street | titleCase}},
+              {{$data.city | titleCase}},
+              {{$data.state | titleCase}}
+              {{$data.zip}}
+            </p>
+          </div>
+          <div class="media-right">
+            <img data-bind="attr.src: $data.picture.medium" alt="Photo" class="hidden-xs media-object cko-photo"/>
+            <img data-bind="attr.src: $data.picture.thumbnail" alt="Photo" class="visible-xs media-object cko-photo"/>
+          </div>
+        </div>
+        <!--/ko-->
+
+        <a href="#" class="cko-next-user" title="Next user" data-bind="on.click: $component.nextUser()"></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ko-->
+
+
